@@ -13,7 +13,13 @@ const findProducts = async term => {
   }
 }
 
-watch(searchTerm, newTerm => findProducts(newTerm))
+watch(searchTerm, newTerm => {
+  if (newTerm) {
+    findProducts(newTerm)
+  } else {
+    products.value = []
+  }
+})
 </script>
 
 <template>
