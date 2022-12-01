@@ -1,7 +1,8 @@
 <script setup>
 import { ref, watch } from 'vue'
+import { useDebouncedRef } from './debouncedRef'
 
-const searchTerm = ref('')
+const searchTerm = useDebouncedRef('', 300)
 const products = ref([])
 const loading = ref(false)
 
